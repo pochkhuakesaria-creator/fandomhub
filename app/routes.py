@@ -16,10 +16,7 @@ from werkzeug.security import (
 )
 
 
-bp = Blueprint("main", __name__)
-@bp.route("/test")
-def test():
-    return "Route works"
+
 
 # ---------------- USER LOADER ----------------
 
@@ -31,7 +28,6 @@ def load_user(user_id):
 
 # ---------------- HOME ----------------
 @bp.route("/")
-@login_required
 def home():
 
     search = request.args.get("search")
