@@ -15,9 +15,13 @@
 
 <nav>
 
-    <a href="/static">Home</a>
+    <a href="{{ url_for('main.home') }}">
+        Home
+    </a>
 
-    <a href="/logout">Logout</a>
+    <a href="{{ url_for('main.logout') }}">
+        Logout
+    </a>
 
 </nav>
 
