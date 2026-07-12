@@ -1,0 +1,305 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<!-- FANDOM HEADER -->
+
+<div class="fandom-header">
+
+
+    <img
+    src="{{ fandom.image }}"
+    alt="{{ fandom.title }}">
+
+
+
+    <div class="fandom-header-info">
+
+
+        <h1>
+            {{ fandom.title }}
+        </h1>
+
+
+        <h3>
+            {{ fandom.category }}
+        </h3>
+
+
+        <p>
+            {{ fandom.description }}
+        </p>
+
+
+        {% if fandom.user_id == current_user.id %}
+
+        <a class="delete-button"
+        href="/fandom/delete/{{ fandom.id }}">
+            Delete Fandom
+        </a>
+
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<!-- CREATE POST -->
+
+
+<div class="create-post">
+
+
+<form method="POST" action="/fandom/{{ fandom.id }}/post">
+
+
+    <textarea
+    name="text"
+    placeholder="What's happening?"
+    required></textarea>
+
+
+    <button>
+        Post
+    </button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+
+<h1 class="feed-title">
+    Posts
+</h1>
+
+
+
+
+
+<!-- POSTS -->
+
+
+{% for post in fandom.posts %}
+
+
+
+<div class="post-card" id="post-{{ post.id }}">
+
+
+
+
+
+    <!-- USER INFO -->
+
+
+    <div class="post-top">
+
+
+        <img
+        src="{{ post.user.profile_image }}"
+        alt="profile">
+
+
+        <div>
+
+
+            <h3>
+                {{ post.user.username }}
+            </h3>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- TEXT -->
+
+
+    <p class="post-text">
+
+        {{ post.text }}
+
+    </p>
+
+
+
+
+
+    <!-- ACTIONS -->
+
+
+    <div class="post-actions">
+
+
+
+        <a href="/post/{{ post.id }}/like#post-{{ post.id }}">
+
+            ❤️ {{ post.likes|length }}
+
+        </a>
+
+
+
+
+
+        {% if post.user_id == current_user.id %}
+
+
+
+        <a href="/post/edit/{{ post.id }}">
+
+            ✏ Edit
+
+        </a>
+
+
+
+        <a href="/post/delete/{{ post.id }}">
+
+            🗑 Delete
+
+        </a>
+
+
+
+        {% endif %}
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- COMMENTS -->
+
+
+    <div class="comments">
+
+
+        <h4>
+            Comments
+        </h4>
+
+
+
+
+
+        {% for comment in post.comments %}
+
+
+
+        <div class="comment">
+
+
+            <img
+            src="{{ comment.user.profile_image }}"
+            alt="profile">
+
+
+
+            <b>
+                {{ comment.user.username }}
+            </b>
+
+
+
+            <span>
+                {{ comment.text }}
+            </span>
+
+
+
+
+
+            {% if comment.user_id == current_user.id %}
+
+
+            <a href="/comment/delete/{{ comment.id }}">
+
+                Delete
+
+            </a>
+
+
+            {% endif %}
+
+
+
+
+        </div>
+
+
+
+        {% endfor %}
+
+
+
+
+
+
+
+        <!-- ADD COMMENT -->
+
+
+        <form method="POST"
+        action="/post/{{ post.id }}/comment">
+
+
+            <input
+            type="text"
+            name="text"
+            placeholder="Write a comment..."
+            required>
+
+
+
+            <button>
+                Comment
+            </button>
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}

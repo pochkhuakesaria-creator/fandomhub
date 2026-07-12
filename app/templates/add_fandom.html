@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="auth-container">
+
+
+<div class="auth-card">
+
+
+<h1>
+    Add New Fandom
+</h1>
+
+
+
+<form method="POST">
+
+
+    {{ form.hidden_tag() }}
+
+
+
+    {{ form.title(
+        placeholder="Fandom Name"
+    ) }}
+
+
+
+    {{ form.category(
+        placeholder="Category"
+    ) }}
+
+
+
+    {{ form.description(
+        placeholder="Description"
+    ) }}
+
+
+
+    {{ form.image(
+        placeholder="Image URL"
+    ) }}
+
+
+
+    {{ form.submit(
+        class="auth-button"
+    ) }}
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

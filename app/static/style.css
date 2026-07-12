@@ -1,0 +1,800 @@
+/* ================= GENERAL ================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f5f7;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #222;
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+    margin-top: 35px;
+
+    font-size: 40px;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    color: #4f46e5;
+
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+
+nav {
+
+    background: #111827;
+
+    padding: 18px 50px;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+}
+
+
+nav a {
+
+    color: white;
+
+}
+
+
+nav a:hover {
+
+    color: #a78bfa;
+
+}
+
+
+
+/* ================= BUTTONS ================= */
+
+
+button {
+
+    background: #4f46e5;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+}
+
+
+button:hover {
+
+    background:#3730a3;
+
+}
+
+
+
+
+
+/* ================= FANDOM GRID ================= */
+
+
+.fandom-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    padding:40px;
+
+}
+
+
+
+/* CARD */
+
+
+.fandom-card {
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:visible;
+
+    min-height:450px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+
+
+.fandom-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.image-container {
+
+    position:relative;
+
+}
+
+
+
+.fandom-card img {
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:20px 20px 0 0;
+
+}
+
+
+
+
+
+/* DESCRIPTION HOVER */
+
+
+.description {
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:250px;
+
+    background:rgba(0,0,0,0.75);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-sizing:border-box;
+
+    border-radius:20px 20px 0 0;
+
+    opacity:0;
+
+    transition:0.3s;
+
+    pointer-events:none;
+
+}
+
+
+
+.image-container:hover .description {
+
+    opacity:1;
+
+}
+
+
+
+
+
+/* INFO */
+
+
+.fandom-info {
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+.fandom-info h2 {
+
+    margin:5px;
+
+    font-size:26px;
+
+}
+
+
+
+.fandom-info p {
+
+    color:gray;
+
+}
+
+
+
+
+
+/* OPEN BUTTON */
+
+
+.open-button {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:12px 30px;
+
+    background:#4f46e5;
+
+    color:white;
+
+    border-radius:12px;
+
+}
+
+
+
+.open-button {
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+
+
+
+/* ADD FANDOM */
+
+
+.add-fandom-box {
+
+    text-align:center;
+
+    margin:50px;
+
+}
+
+
+
+.add-button {
+
+    background:#4f46e5;
+
+    color:white;
+
+    padding:15px 40px;
+
+    border-radius:15px;
+
+    display:inline-block;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+/* ================= FORMS ================= */
+
+
+form {
+
+    width:400px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+
+
+input,textarea {
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    box-sizing:border-box;
+
+}
+
+
+
+
+
+/* ================= AUTH ================= */
+
+
+.auth-container {
+
+    min-height:85vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.auth-card {
+
+    width:420px;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+
+.auth-card form {
+
+    width:100%;
+
+    padding:0;
+
+    box-shadow:none;
+
+    margin:0;
+
+}
+
+
+
+.auth-card button {
+
+    width:100%;
+
+}
+
+
+
+
+
+/* ================= POSTS ================= */
+
+
+.post-card {
+
+    width:650px;
+
+    margin:25px auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+}
+
+
+
+.post-top {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.post-top img {
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+.post-actions {
+
+    display:flex;
+
+    gap:20px;
+
+    border-top:1px solid #eee;
+
+    padding-top:15px;
+
+}
+
+
+
+
+
+/* ================= PROFILE ================= */
+
+
+.profile-page {
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:50px;
+
+}
+
+
+
+.profile-card {
+
+    width:450px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+
+.profile-card img {
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* ================= FANDOM DETAIL ================= */
+
+
+.fandom-header {
+
+    width:900px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+
+
+.fandom-header img {
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+/* ================= MADE BY ================= */
+
+
+.made-by {
+
+    font-size:13px;
+
+    color:gray;
+
+}
+
+.delete-button {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#dc2626;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:12px;
+
+}
+
+
+
+.delete-button:hover {
+
+    background:#991b1b;
+
+}
+/* ================= SEARCH ================= */
+
+
+.search-bar {
+
+    width:600px;
+
+    margin:30px auto;
+
+    display:flex;
+
+    gap:10px;
+
+    background:none;
+
+    box-shadow:none;
+
+    padding:0;
+
+}
+
+
+
+.search-bar input {
+
+    flex:1;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+}
+
+
+
+.search-bar button {
+
+    padding:15px 30px;
+
+}
+/* ================= COMMENTS ================= */
+
+
+.comment {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f9fafb;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.comment img {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
+
+
+
+.comment b {
+
+    font-size: 15px;
+
+    color: #111827;
+
+}
+
+
+
+.comment span {
+
+    color: #444;
+
+    margin-left: 5px;
+
+}
+
+
+
+.comments {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+
+.comments form {
+
+    width: 100%;
+
+    padding: 0;
+
+    margin-top: 15px;
+
+    background: none;
+
+    box-shadow: none;
+
+}
+
+
+
+.comments input {
+
+    width: 80%;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+.comments button {
+
+    padding: 12px 20px;
+
+}
+/* ================= FOOTER ================= */
+
+
+.site-footer {
+
+    margin-top: 60px;
+
+    padding: 25px;
+
+    background: #111827;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+.site-footer img {
+
+    width: 120px;
+
+    height: auto;
+
+    transition: 0.3s;
+
+}
+
+
+
+.site-footer img:hover {
+
+    transform: scale(1.1);
+
+}

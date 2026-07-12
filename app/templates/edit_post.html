@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Edit Post</h1>
+
+<form method="POST">
+
+    <textarea name="text">{{ post.text }}</textarea>
+
+    <button type="submit">Update</button>
+
+</form>
+
+</body>
+</html>

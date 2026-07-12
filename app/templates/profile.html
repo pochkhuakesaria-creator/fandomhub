@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>{{ user.username }} - Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+    <a href="/">Home</a>
+
+    <a href="/logout">Logout</a>
+
+</nav>
+
+
+
+<div class="profile-page">
+
+
+    <div class="profile-card">
+
+
+        <img 
+        src="{{ user.profile_image }}" 
+        alt="Profile Picture">
+
+
+
+        <h1>
+            {{ user.username }}
+        </h1>
+
+
+
+        <p class="email">
+            {{ user.email }}
+        </p>
+
+
+
+        <div class="profile-bio">
+
+            {{ user.bio }}
+
+        </div>
+
+
+
+        <a 
+        class="profile-button" 
+        href="/profile/edit">
+
+            Edit Profile
+
+        </a>
+
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

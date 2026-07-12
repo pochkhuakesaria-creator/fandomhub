@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+
+        <h1>
+            Welcome Back
+        </h1>
+
+
+        <p>
+            Login to your Fandom Hub account
+        </p>
+
+
+
+        <form method="POST">
+
+
+            {{ form.hidden_tag() }}
+
+
+            {{ form.email(
+                placeholder="Email"
+            ) }}
+
+
+            {{ form.password(
+                placeholder="Password"
+            ) }}
+
+
+            {{ form.submit(
+                class="auth-button"
+            ) }}
+
+
+
+        </form>
+
+
+
+        <a href="/register">
+            Don't have an account? Register
+        </a>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

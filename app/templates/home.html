@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<h1>Explore Fandoms</h1>
+
+<form class="search-bar" method="GET" action="/">
+
+    <input
+    type="text"
+    name="search"
+    placeholder="Search fandoms..."
+    >
+
+    <button>
+        Search
+    </button>
+
+</form>
+
+<div class="fandom-grid">
+
+
+{% for fandom in fandoms %}
+
+
+<div class="fandom-card">
+
+
+    <div class="image-container">
+
+
+       <img
+       src="{{ fandom.image }}"
+       alt="{{ fandom.title }}"
+       onerorr="this.src='https://via.placeholder.com/400x250?text=No+Image'">
+
+
+
+        <div class="description">
+
+            {{ fandom.description }}
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="fandom-info">
+
+
+        <h2>
+            {{ fandom.title }}
+        </h2>
+
+
+        <p>
+            {{ fandom.category }}
+        </p>
+
+
+
+        {% if fandom.creator %}
+
+        <p class="made-by">
+
+            Made by {{ fandom.creator.username }}
+
+        </p>
+
+        {% endif %}
+
+
+
+
+        <a
+        class="open-button"
+        href="/fandom/{{ fandom.id }}">
+
+            Open Fandom
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+<div class="add-fandom-box">
+
+    <a href="/add" class="add-button">
+
+        + Add New Fandom
+
+    </a>
+
+</div>
+
+
+
+{% endblock %}
