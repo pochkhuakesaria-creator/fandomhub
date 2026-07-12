@@ -36,10 +36,10 @@
 
         {% if fandom.user_id == current_user.id %}
 
-        <a class="delete-button"
-        href="/fandom/delete/{{ fandom.id }}">
-            Delete Fandom
-        </a>
+       <a class="delete-button"
+href="{{ url_for('main.delete_fandom', id=fandom.id) }}">
+    Delete Fandom
+</a>
 
         {% endif %}
 
@@ -59,7 +59,7 @@
 <div class="create-post">
 
 
-<form method="POST" action="/fandom/{{ fandom.id }}/post">
+<form method="POST" action="{{ url_for('main.add_post', id=fandom.id) }}">
 
 
     <textarea
@@ -151,7 +151,7 @@
 
 
 
-        <a href="/post/{{ post.id }}/like#post-{{ post.id }}">
+        <a href="{{ url_for('main.like_post', id=post.id) }}#post-{{ post.id }}">
 
             ❤️ {{ post.likes|length }}
 
@@ -165,7 +165,7 @@
 
 
 
-        <a href="/post/edit/{{ post.id }}">
+        <a href="{{ url_for('main.edit_post', id=post.id) }}">
 
             ✏ Edit
 
@@ -173,7 +173,7 @@
 
 
 
-        <a href="/post/delete/{{ post.id }}">
+       <a href="{{ url_for('main.delete_post', id=post.id) }}">
 
             🗑 Delete
 
@@ -237,11 +237,9 @@
             {% if comment.user_id == current_user.id %}
 
 
-            <a href="/comment/delete/{{ comment.id }}">
-
-                Delete
-
-            </a>
+           <a href="{{ url_for('main.delete_comment', id=comment.id) }}">
+    Delete
+</a>
 
 
             {% endif %}
@@ -265,7 +263,7 @@
 
 
         <form method="POST"
-        action="/post/{{ post.id }}/comment">
+action="{{ url_for('main.add_comment', id=post.id) }}">
 
 
             <input
